@@ -41,11 +41,11 @@ public class GameController {
         // Verificar linhas
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 5 - 4; j++) {
-                if (    tab[i][j] == currentPlayer &&
-                        tab[i][j + 1] == currentPlayer &&
-                        tab[i][j + 2] == currentPlayer &&
-                        tab[i][j + 3] == currentPlayer &&
-                        tab[i][j + 4] == currentPlayer) {
+                if (    tab[i][j].equals(currentPlayer) &&
+                        tab[i][j + 1].equals(currentPlayer) &&
+                        tab[i][j + 2].equals(currentPlayer) &&
+                        tab[i][j + 3].equals(currentPlayer) &&
+                        tab[i][j + 4].equals(currentPlayer)) {
                     return true;
                 }
             }
@@ -54,11 +54,11 @@ public class GameController {
         // Verificar Colunas
         for (int i = 0; i < 5 - 4; i++) {
             for (int j = 0; j < 5; j++) {
-                if (    tab[i][j] == currentPlayer &&
-                        tab[i + 1][j] == currentPlayer &&
-                        tab[i + 2][j] == currentPlayer &&
-                        tab[i + 3][j] == currentPlayer &&
-                        tab[i + 4][j] == currentPlayer) {
+                if (    tab[i][j].equals(currentPlayer) &&
+                        tab[i + 1][j].equals(currentPlayer) &&
+                        tab[i + 2][j].equals(currentPlayer) &&
+                        tab[i + 3][j].equals(currentPlayer) &&
+                        tab[i + 4][j].equals(currentPlayer)) {
                     return true;
                 }
             }
@@ -67,11 +67,11 @@ public class GameController {
         // Verificar Diagonais
         for (int i = 0; i < 5 - 4; i++) {
             for (int j = 0; j < 5 - 4; j++) {
-                if (    tab[i][j] == currentPlayer &&
-                        tab[i + 1][j + 1] == currentPlayer &&
-                        tab[i + 2][j + 2] == currentPlayer &&
-                        tab[i + 3][j + 3] == currentPlayer &&
-                        tab[i + 4][j + 4] == currentPlayer) {
+                if (    tab[i][j].equals(currentPlayer) &&
+                        tab[i + 1][j + 1].equals(currentPlayer)&&
+                        tab[i + 2][j + 2].equals(currentPlayer) &&
+                        tab[i + 3][j + 3].equals(currentPlayer) &&
+                        tab[i + 4][j + 4].equals(currentPlayer)) {
                     return true;
                 }
             }
@@ -79,11 +79,11 @@ public class GameController {
 
         for (int i = 4; i < 5; i++) {
             for (int j = 0; j < 5 - 4; j++) {
-                if (    tab[i][j] == currentPlayer &&
-                        tab[i - 1][j + 1] == currentPlayer &&
-                        tab[i - 2][j + 2] == currentPlayer &&
-                        tab[i - 3][j + 3] == currentPlayer &&
-                        tab[i - 4][j + 4] == currentPlayer) {
+                if (    tab[i][j].equals(currentPlayer) &&
+                        tab[i - 1][j + 1].equals(currentPlayer) &&
+                        tab[i - 2][j + 2].equals(currentPlayer) &&
+                        tab[i - 3][j + 3].equals(currentPlayer) &&
+                        tab[i - 4][j + 4].equals(currentPlayer)) {
                     return true;
                 }
             }
