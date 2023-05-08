@@ -38,12 +38,23 @@ public class TabController {
         return true;
     }
 
-    public boolean move(int row, int column, String player) {
-        if(!tab[row][column].equals("#")) {
+    public boolean move(int column, String player) {
+        if (column < 0 || column > 4) {
+            // Verifica se o valor da coluna é inválido.
             return false;
         }
 
-        tab[row][column] = player;
+        int row = 0;
+        while (row < 5 && tab[row][column].equals("#")) {
+            row++;
+        }
+
+        if (row == 0 || !tab[row - 1][column].equals("#")) {
+            // Verifica se a coluna está cheia ou se o numero é inválido
+            return false;
+        }
+
+        tab[row - 1][column] = player;
         return true;
     }
 }

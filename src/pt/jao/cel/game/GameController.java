@@ -10,16 +10,13 @@ public class GameController {
         Scanner scanner = new Scanner(System.in);
 
         tabController.clearTab();
-        System.out.println("checkWin method returned " + checkWin(currentPlayer));
-        System.out.println("isFull method returned " + tabController.isFull());
+        tabController.displayTab();
 
         while (!tabController.isFull() && !checkWin(currentPlayer)) {
             System.out.println("[" + currentPlayer + "] [COLUNA] Escolha uma coluna: ");
             int column = scanner.nextInt();
-            System.out.println("[" + currentPlayer + "] [LINHA] Escolha uma linha: ");
-            int row = scanner.nextInt();
 
-            if (!tabController.move(row, column, currentPlayer)) {
+            if (!tabController.move(column, currentPlayer)) {
                 System.out.println("Posição inválida, escolha outra.");
             } else {
                 tabController.displayTab();
