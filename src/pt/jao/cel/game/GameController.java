@@ -26,11 +26,20 @@ public class GameController {
                 if (checkWin(currentPlayer)) {
                     System.out.println(ConsoleColors.brightGreen + "O jogador " + currentPlayer + " ganhou!");
                 } else if (tabController.isFull()) {
-                    System.out.println("Empate!");
+                    System.out.println(ConsoleColors.brightYellow + "Empate!");
                 } else {
                     currentPlayer = (currentPlayer.equals("X")) ? "O" : "X";
                 }
             }
+        }
+
+        System.out.println(ConsoleColors.reset + "Deseja jogar novamente? ");
+        String next = scanner.next();
+
+        if (next.equals("sim") || next.equals("s")) {
+            play();
+        } else {
+            System.exit(0);
         }
     }
 
