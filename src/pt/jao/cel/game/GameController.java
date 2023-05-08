@@ -1,5 +1,7 @@
 package pt.jao.cel.game;
 
+import pt.jao.cel.util.ConsoleColors;
+
 import java.util.Scanner;
 
 public class GameController {
@@ -13,7 +15,7 @@ public class GameController {
         tabController.displayTab();
 
         while (!tabController.isFull() && !checkWin(currentPlayer)) {
-            System.out.println("[" + currentPlayer + "] [COLUNA] Escolha uma coluna: ");
+            System.out.println("[" + currentPlayer + "] Escolha uma coluna: ");
             int column = scanner.nextInt();
 
             if (!tabController.move(column, currentPlayer)) {
@@ -22,7 +24,7 @@ public class GameController {
                 tabController.displayTab();
 
                 if (checkWin(currentPlayer)) {
-                    System.out.println("O jogador " + currentPlayer + " ganhou!");
+                    System.out.println(ConsoleColors.brightGreen + "O jogador " + currentPlayer + " ganhou!");
                 } else if (tabController.isFull()) {
                     System.out.println("Empate!");
                 } else {
@@ -43,6 +45,14 @@ public class GameController {
                         tab[i][j + 2].equals(currentPlayer) &&
                         tab[i][j + 3].equals(currentPlayer) &&
                         tab[i][j + 4].equals(currentPlayer)) {
+
+                    tabController.clearTab();
+                    tab[i][j] = currentPlayer;
+                    tab[i][j + 1] = currentPlayer;
+                    tab[i][j + 2] = currentPlayer;
+                    tab[i][j + 3] = currentPlayer;
+                    tab[i][j + 4] = currentPlayer;
+                    tabController.displayTab();
                     return true;
                 }
             }
@@ -56,6 +66,14 @@ public class GameController {
                         tab[i + 2][j].equals(currentPlayer) &&
                         tab[i + 3][j].equals(currentPlayer) &&
                         tab[i + 4][j].equals(currentPlayer)) {
+
+                    tabController.clearTab();
+                    tab[i][j] = currentPlayer;
+                    tab[i + 1][j] = currentPlayer;
+                    tab[i + 2][j] = currentPlayer;
+                    tab[i + 3][j] = currentPlayer;
+                    tab[i + 4][j] = currentPlayer;
+                    tabController.displayTab();
                     return true;
                 }
             }
@@ -69,6 +87,14 @@ public class GameController {
                         tab[i + 2][j + 2].equals(currentPlayer) &&
                         tab[i + 3][j + 3].equals(currentPlayer) &&
                         tab[i + 4][j + 4].equals(currentPlayer)) {
+
+                    tabController.clearTab();
+                    tab[i][j] = currentPlayer;
+                    tab[i + 1][j + 1] = currentPlayer;
+                    tab[i + 2][j + 2] = currentPlayer;
+                    tab[i + 3][j + 3] = currentPlayer;
+                    tab[i + 4][j + 4] = currentPlayer;
+                    tabController.displayTab();
                     return true;
                 }
             }
@@ -81,6 +107,14 @@ public class GameController {
                         tab[i - 2][j + 2].equals(currentPlayer) &&
                         tab[i - 3][j + 3].equals(currentPlayer) &&
                         tab[i - 4][j + 4].equals(currentPlayer)) {
+
+                    tabController.clearTab();
+                    tab[i][j] = currentPlayer;
+                    tab[i - 1][j + 1] = currentPlayer;
+                    tab[i - 2][j + 2] = currentPlayer;
+                    tab[i - 3][j + 3] = currentPlayer;
+                    tab[i - 4][j + 4] = currentPlayer;
+                    tabController.displayTab();
                     return true;
                 }
             }

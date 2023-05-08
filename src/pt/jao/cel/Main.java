@@ -17,8 +17,7 @@ public class Main {
 
         /*
         TODO
-         - Fazer as peças cairem nas colunas
-         - Otimização do código (Caso necessário)
+         - Otimização do código
         */
     }
 }

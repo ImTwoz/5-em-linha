@@ -50,7 +50,7 @@ public class TabController {
         }
 
         if (row == 0 || !tab[row - 1][column].equals("#")) {
-            // Verifica se a coluna está cheia ou se o numero é inválido
+            // Verifica se a coluna está cheia ou se o valor é inválido
             return false;
         }
 
