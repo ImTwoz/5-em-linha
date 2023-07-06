@@ -1,7 +1,9 @@
 package pt.jao.cel.game;
 
+import pt.jao.cel.util.ClearConsole;
 import pt.jao.cel.util.ConsoleColors;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class GameController {
@@ -15,6 +17,12 @@ public class GameController {
         tabController.displayTab();
 
         while (!tabController.isFull() && !checkWin(currentPlayer)) {
+            try {
+                ClearConsole.start();
+            } catch (IOException | InterruptedException e) {
+                System.err.println("Error: " + e.getMessage());
+            }
+
             System.out.println("[" + currentPlayer + "] Escolha uma coluna: ");
             int column = scanner.nextInt();
 
@@ -36,7 +44,7 @@ public class GameController {
         System.out.println(ConsoleColors.reset + "Deseja jogar novamente? ");
         String next = scanner.next();
 
-        if (next.equals("sim") || next.equals("s")) {
+        if (next.equals("sim") || next.equals("s") || next.equals("y") || next.equals("yes")) {
             play();
         } else {
             System.exit(0);

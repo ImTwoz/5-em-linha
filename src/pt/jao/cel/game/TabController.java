@@ -4,16 +4,22 @@ public class TabController {
     String[][] tab = new String[5][5];
 
     public void displayTab() {
-        System.out.print("  ");
+        System.out.print(" ");
         for (int i = 0; i < 5; i++) {
-            System.out.print(i + " ");
+            System.out.print("   " + i);
         }
         System.out.println();
 
         for (int i = 0; i < 5; i++) {
-            System.out.print(i + " ");
+            System.out.print(i + " | ");
             for (int j = 0; j < 5; j++) {
-                System.out.print(tab[i][j] + " ");
+                System.out.print(tab[i][j] + " | ");
+            }
+            System.out.println();
+
+            System.out.print("  ");
+            for (int j = 0; j < 5; j++) {
+                System.out.print(" ---");
             }
             System.out.println();
         }
